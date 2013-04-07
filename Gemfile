@@ -18,3 +18,7 @@ end
 group :evented do
   gem 'em-synchrony'
 end
+
+group :actor do
+  gem 'celluloid'
+end
