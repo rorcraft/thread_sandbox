@@ -42,3 +42,32 @@ __JRuby 1.7.3 EM::Synchrony jdbc-mysql (not evented)__
               user     system      total        real
 1 sleep(3)    1.020000   0.040000   1.060000 (  3.830000)
 5 concurrent  0.050000   0.010000   0.060000 ( 15.032000)
+
+```
+
+__Ruby 1.9.3 Celluloid__
+
+```
+ActiveRecord IO:
+              user     system      total        real
+1 sleep(3)    0.020000   0.000000   0.020000 (  3.119160)
+5 concurrent  0.000000   0.000000   0.000000 (  3.008427)
+
+Computation:
+              user     system      total        real
+fib(32)       0.870000   0.000000   0.870000 (  0.884170)
+5 actors      4.450000   0.010000   4.460000 (  4.518849)
+```
+__JRuby 1.7.3 Celluloid__
+
+```
+ActiveRecord IO:
+              user     system      total        real
+1 sleep(3)    1.030000   0.050000   1.080000 (  3.929000)
+5 concurrent  0.990000   0.060000   1.050000 (  3.490000)
+
+Computation:
+              user     system      total        real
+fib(32)       0.800000   0.020000   0.820000 (  0.760000)
+5 actors      3.510000   0.070000   3.580000 (  2.091000)
+```
