@@ -36,7 +36,7 @@ __Ruby 1.9.3 EM::Synchrony__
 5 concurrent  0.010000   0.000000   0.010000 (  3.002499)
 ```
 
---JRuby 1.7.3 EM::Synchrony jdbc-mysql (not evented)__
+__JRuby 1.7.3 EM::Synchrony jdbc-mysql (not evented)__
 
 ```
               user     system      total        real
