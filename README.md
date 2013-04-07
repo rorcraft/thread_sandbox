@@ -28,7 +28,7 @@ fib(32)       0.430000   0.010000   0.440000 (  0.360000)
 5 threads     1.320000   0.000000   1.320000 (  0.753000)
 ```
 
-__Ruby 1.9.3 EM::Synchrony
+__Ruby 1.9.3 EM::Synchrony__
 
 ```
               user     system      total        real
