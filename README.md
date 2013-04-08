@@ -71,3 +71,12 @@ Computation:
 fib(32)       0.800000   0.020000   0.820000 (  0.760000)
 5 actors      3.510000   0.070000   3.580000 (  2.091000)
 ```
+
+__Interesting Golang performance__
+
+```
+sleep(3)      1                3003332000 ns/op
+5 go func     1                3005076000 ns/op
+fib(32)       1000000000	         0.04 ns/op
+5 go fib(32)  1000000000	         0.13 ns/op
+```
