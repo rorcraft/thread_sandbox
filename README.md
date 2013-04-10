@@ -80,3 +80,11 @@ sleep(3)      1                3003332000 ns/op
 fib(32)       1000000000	         0.04 ns/op
 5 go fib(32)  1000000000	         0.13 ns/op
 ```
+
+__Nodejs__
+```
+sleep(3):     3013ms
+5 concurrent: 3017ms
+fib(32):       591ms
+5 fib(32):    2867ms
+```
