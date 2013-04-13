@@ -1,6 +1,6 @@
 require 'bundler'
 Bundler.require(:default)
-
+require 'net/http'
 # puts "mysql2"
 # db = Mysql2::Client.new(:host => "localhost", :username => "root")
 
@@ -38,6 +38,29 @@ Benchmark.bm do |b|
         ActiveRecord::Base.connection.close
       end
     end
+    threads.map(&:join)
+  end
+
+
+  b.report("10 http") do
+    threads = []
+    10.times do
+      threads << Thread.new do
+        uri = URI('http://change.org/')
+        Net::HTTP.get(uri)
+      end
+    end
+  end
+
+  b.report("10 http threads") do
+    threads = []
+    10.times do
+      threads << Thread.new do
+        uri = URI('http://change.org/')
+        response = Net::HTTP.get(uri)
+      end
+    end
+
     threads.map(&:join)
   end
 end
