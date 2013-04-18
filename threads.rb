@@ -22,11 +22,13 @@ ActiveRecord::Base.establish_connection(adapter: adapter,  password: "", host: "
 Benchmark.bm do |b|
   b.report("db sleep(3)") do
     ActiveRecord::Base.connection.execute("SELECT sleep(3)")
+    ActiveRecord::Base.connection.close
   end
 
   b.report("1 thread") do
     Thread.new do
       ActiveRecord::Base.connection.execute("SELECT sleep(3)")
+      ActiveRecord::Base.connection.close
     end.join
   end
 
@@ -45,10 +47,8 @@ Benchmark.bm do |b|
   b.report("10 http") do
     threads = []
     10.times do
-      threads << Thread.new do
-        uri = URI('http://change.org/')
-        Net::HTTP.get(uri)
-      end
+      uri = URI('http://change.org/')
+      Net::HTTP.get(uri)
     end
   end
 
