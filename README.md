@@ -7,13 +7,17 @@ Activerecord IO:
               user     system      total        real
 db sleep(3)   0.010000   0.010000   0.020000 (  3.140850)
 1 thread      0.000000   0.000000   0.000000 (  3.001809)
-5 threads     0.010000   0.000000   0.010000 (  6.004460)
+5 threads     0.010000   0.000000   0.010000 (  3.028423)
+
+10 http       0.000000   0.000000   0.000000 (  0.709238)
+10 threads    0.010000   0.000000   0.010000 (  0.066954)
 
 Computation:
               user     system      total        real
 fib(32)       0.780000   0.000000   0.780000 (  0.800027)
 5 threads     3.750000   0.010000   3.760000 (  3.793712)
 ```
+
 __JRuby 1.7.3 with Threads__
 ```
 Activerecord IO:
